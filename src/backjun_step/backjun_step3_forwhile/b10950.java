@@ -1,4 +1,4 @@
-package backjun_step3;
+package backjun_step.backjun_step3_forwhile;
 
 import java.util.Scanner;
 

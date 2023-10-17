@@ -1,4 +1,4 @@
-package backjun_step4;
+package backjun_step.backjun_step4_array;
 
 import java.util.Scanner;
 

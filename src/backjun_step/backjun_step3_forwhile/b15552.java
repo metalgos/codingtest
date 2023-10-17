@@ -1,10 +1,9 @@
-package backjun_step3;
+package backjun_step.backjun_step3_forwhile;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class b15552 {
