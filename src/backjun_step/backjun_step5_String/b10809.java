@@ -5,34 +5,34 @@ import java.util.Scanner;
 public class b10809 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String st =sc.next();
+        String st = sc.next();
 
 
-        int alpha[] = new int[24];
-        int count =65;
-        for (int k =0; k<alpha.length;k++){
-            alpha[k] = count++;
+        int alpha[] = new int[st.length()];
+
+        for (int k = 0; k < alpha.length; k++) {
+            alpha[k] = st.charAt(k);
         }
 
 
-        for (int i =0; i<st.length();i++){
-            int count2 =0;
-            char c = st.charAt(i);
+        int result[] = new int[26];
+        int alphabet[] = new int[26];
+        for (int k = 0; k < result.length; k++) {
+            result[k] = -1;
+            alphabet[k] = k + 97;
+        }
 
 
-
-
-            for (int j =65; j<=99;j++){
-                if(c==j){
-                   count2 = i;
-
-                }else{
-                    count2= -1;
+        for (int i =0; i<alpha.length;i++) { // 65 99 55 44
+            for (int j = 0; j < result.length; j++) {
+                if (alpha[i] ==  alphabet[j] && result[j] == -1) { // 9798
+                    result[j] = i;
                 }
-                System.out.print(count2 + " ");
             }
+        }
 
-
+        for (int k = 0; k < result.length; k++) {
+            System.out.print(result[k] + " ");
         }
 
     }
