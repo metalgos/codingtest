@@ -8,42 +8,31 @@ public class b1316 {
         Scanner sc = new Scanner(System.in);
         int count = sc.nextInt();
         sc.nextLine();
-        int result =0;
+        int result = 0;
 
         for (int j = 0; j < count; j++) {
             int index;
-
+            int pre = 0;
             String str = sc.nextLine();
-            //System.out.println(" input : "+str);
             int alpa[] = new int[26];
             result++;
-
-            loop1:
+            int delta[] = new int[26];
             for (int i = 0; i < str.length(); i++) {
 
-                int delta[] = alpa.clone();
                 int temp = str.charAt(i) - 97;
 
-                //System.out.println(temp);
+
+                if (delta[temp] == 0 && alpa[temp] == 0) {
+                    delta[temp]++;
+                    pre = temp;
+
+                } else if (alpa[temp] >= 1 && alpa[temp] != 0 && temp != pre) {
+                    result--;
+                    break;
+                }
                 alpa[temp]++;
 
-                index = temp; //숫자 추가된 인덱스
-                //System.out.println("index : " +index);
 
-
-                for(int k =0; k<alpa.length;k++){
-                    if(alpa[k]!= delta[k]){ //배열끼리 검사
-                        System.out.println(alpa[k] + " " + delta[k]);
-                        System.out.println("k :" +k);
-                        if(k<index){ // 달라진 배열 번호가 인덱스번호보다 작으면
-                            if(result>0){
-                                result--;
-                                break loop1;
-                            }
-
-                        }
-                    }
-                }
             }
 
 
