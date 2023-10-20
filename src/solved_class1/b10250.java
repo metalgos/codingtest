@@ -20,32 +20,24 @@ public class b10250 {
             for (int k = 0; k < w; k++) {
 
 
-                for (int j = 0; j < h; k++) {
+                for (int j = 0; j < h; j++) {
                     arr[k][j] = 1;
                     count--;
                     if (count < 1) {
-
-                        System.out.println(k + 1 + "" + j + 1);
-                        break loop1;
+                        if(k+1<10) {
+                            System.out.println((j + 1) + "0" + (k + 1));
+                            break loop1;
+                        }else {
+                            System.out.println((j + 1) + "" + (k + 1));
+                            break loop1;
+                        }
                     }
+
                 }
 
 
             }
 
-            for (int k = 0; k < w; k++) {
-
-                    for (int j = 0; j < h; k++) {
-                        if (arr[k][j] > 0) {
-                            System.out.print("1 ");
-                        } else
-                            System.out.print(" ");
-
-                    }
-                System.out.println();
-
-
-            }
         }
     }
 }
