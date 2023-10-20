@@ -56,9 +56,7 @@ public class b1018 {
                                 if (arr[i + s][k+c] != wh[s][c]) {
                                     index2++;
                                 }
-
                             }
-
                         }
 
                         if (index < index2) {
