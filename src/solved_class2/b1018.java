@@ -18,8 +18,6 @@ public class b1018 {
 
             }
         }
-
-
         int count = 1;
         char[][] bl = new char[8][8];
         char[][] wh = new char[8][8];
