@@ -1,47 +1,38 @@
 package solved_class2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Scanner;
+import java.util.*;
 
 public class b1181 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
+        sc.nextLine();
 
-        HashSet<String> uni = new HashSet<>();
+        HashMap<String, String> map = new HashMap<String, String>();
         for (int i = 0; i < n; i++) {
             String temp = sc.nextLine();
-            uni.add(temp);
+            map.put(temp, "");
         }
 
-        // 중복을 제거한 문자열을 배열에 복사
-        String[] arr = new String[uni.size()];
-        uni.toArray(arr);
 
+        ArrayList<String> list = new ArrayList<String>(map.keySet());
 
-        String temp = "";
-
-        for (int k = 0; k < arr.length; k++) {
-            for (int i = k; i < arr.length; i++) {
-                for (int j = 0; j < arr.length; j++) {
-                    System.out.print(arr[j]+ " ");
+        Collections.sort(list, new Comparator<String>() {
+            public int compare(String o1, String o2) {
+                if (o1.length() > o2.length()) {
+                    return 1;
+                } else if (o1.length() < o2.length()) {
+                    return -1;
+                } else if (o1.length() == o2.length()) {
+                    return o1.compareTo(o2);
                 }
-                System.out.println();
-                    if (arr[k].length() > arr[i].length()) {
 
-                        temp = arr[k];
-                        arr[k] = arr[i];
-                        arr[i] = temp;
-                        System.out.println("ar1 : " + arr[k]+" ar2 ; "+arr[i]);
-
-                    }
+                return 0;
             }
-        }
-        //Arrays.sort(arr);
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i]);
+        });
+
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
         }
 
     }
