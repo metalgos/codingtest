@@ -9,9 +9,6 @@ public class b1436 {
 
         int f = n-1;
 
-
-
-
     }
 
 }
