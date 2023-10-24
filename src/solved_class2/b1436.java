@@ -7,7 +7,28 @@ public class b1436 {
         Scanner sc = new Scanner(System.in);
         int step = sc.nextInt();
 
-        int f = n-1;
+        int num = 665;
+        int sum = 0;
+        String str = "";
+
+        while (true) {
+            num++;
+            str = String.valueOf(num);
+
+            for (int i = 0; i < str.length() - 2; i++) {
+
+                if (str.charAt(i) == '6' && str.charAt(i + 1) == '6' && str.charAt(i + 2) == '6')  {
+                    sum++;
+                    i = str.length();
+                }
+            }
+
+            if (sum == step) {
+                break;
+            }
+        }
+
+        System.out.println(num);
 
     }
 
