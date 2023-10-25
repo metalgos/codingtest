@@ -22,6 +22,29 @@ public class b1654 {
         }
 
 
+
+        for (int i = 0; i < arr.length; i++) {
+            int temp =  0;
+            int count = 0;
+
+            for (int k = 1; k < 15000; k++) {
+
+                if(arr[i]%k ==0) {
+                    temp = k;
+                    na[i][count] = temp;
+                    count++;
+                }
+
+
+            }
+        }
+
+
+
+
+
+
+
         for (int i = 0; i < arr.length; i++) {
 
             for (int k = 1; k < arr[i] - 1; k++) {
