@@ -9,24 +9,29 @@ public class b1654 {
         int lstep = sc.nextInt();
 
         int arr[] = new int[fstep];
-        int na[] = new int[1000];
+        int na[][] = new int[fstep][15000];
 
         int sum = 0;
         int min = 0;
 
-        for (int i = 0; i<fstep;i++){
-            int n  = sc.nextInt();
+        for (int i = 0; i < fstep; i++) {
+            int n = sc.nextInt();
             arr[i] = n;
-            sum+=n;
+            sum += n;
+
         }
 
 
-        for (int i =1; i<na.length; i++){
-            if(sum%i ==0){
+        for (int i = 0; i < arr.length; i++) {
 
+            for (int k = 1; k < arr[i] - 1; k++) {
+                if (arr[i] % k == 0) {
 
+                    na[i][k] = k;
+                }
             }
         }
+
 
     }
 
