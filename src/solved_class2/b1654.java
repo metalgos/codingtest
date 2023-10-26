@@ -9,51 +9,48 @@ public class b1654 {
         int lstep = sc.nextInt();
 
         int arr[] = new int[fstep];
-        int na[][] = new int[fstep][15000];
 
-        int sum = 0;
-        int min = 0;
+        int min = 100000;
+
+        int count = 0;
+        int result =0;
 
         for (int i = 0; i < fstep; i++) {
             int n = sc.nextInt();
             arr[i] = n;
-            sum += n;
-
-        }
 
 
-
-        for (int i = 0; i < arr.length; i++) {
-            int temp =  0;
-            int count = 0;
-
-            for (int k = 1; k < 15000; k++) {
-
-                if(arr[i]%k ==0) {
-                    temp = k;
-                    na[i][count] = temp;
-                    count++;
-                }
-
+            if (min > arr[i]) {
+                min = arr[i];
 
             }
+
         }
+        lp1:
+        while (true) {
+
+            for (int k = min; k > 1; k--) {
 
 
-
-
-
-
-
-        for (int i = 0; i < arr.length; i++) {
-
-            for (int k = 1; k < arr[i] - 1; k++) {
-                if (arr[i] % k == 0) {
-
-                    na[i][k] = k;
+                for (int i = 0; i < arr.length; i++) {
+                    count += arr[i] / k;
+                    result = k;
                 }
+
+                if (count >= lstep) {
+
+                    System.out.println(result);
+
+                    break lp1;
+                }
+                count = 0;
             }
+
+
+
         }
+
+
 
 
     }
