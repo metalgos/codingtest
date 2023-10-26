@@ -24,18 +24,21 @@ public class b1654 {
                 min = arr[i];
 
             }
-
+            System.out.println("loop : " + i);
         }
         lp1:
         while (true) {
 
             for (int k = min; k > 1; k--) {
 
-
+                System.out.println(k);
                 for (int i = 0; i < arr.length; i++) {
+
                     count += arr[i] / k;
                     result = k;
+
                 }
+
 
                 if (count >= lstep) {
 
