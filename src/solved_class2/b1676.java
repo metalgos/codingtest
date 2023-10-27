@@ -14,6 +14,8 @@ public class b1676 {
             sum = sum * i;
         }
 
+        //테스트 필요
+
         String str = String.valueOf(sum);
         int count = 0;
         for (int i = str.length() - 1; i > 0; i--) {
