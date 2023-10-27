@@ -6,54 +6,54 @@ public class b1654 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int fstep = sc.nextInt();
-        int lstep = sc.nextInt();
+        long lstep = sc.nextInt();
 
         int arr[] = new int[fstep];
 
-        int min = 100000;
+        int max = 0;
 
-        int count = 0;
-        int result =0;
+        long count = 0;
+        long result = 0;
 
         for (int i = 0; i < fstep; i++) {
             int n = sc.nextInt();
             arr[i] = n;
 
 
-            if (min > arr[i]) {
-                min = arr[i];
+            if (max < arr[i]) {
+                max = arr[i];
 
             }
-            System.out.println("loop : " + i);
+
         }
+        int k = 1;
+        if(max!=0){
+            k=max/2;
+        }
+
+
         lp1:
-        while (true) {
-
-            for (int k = min; k > 1; k--) {
-
-                System.out.println(k);
-                for (int i = 0; i < arr.length; i++) {
-
-                    count += arr[i] / k;
-                    result = k;
-
-                }
 
 
-                if (count >= lstep) {
+        for (; k < max;) {
+            long temp = result;
 
-                    System.out.println(result);
+            for (int i = 0; i < arr.length; i++) {
 
-                    break lp1;
-                }
-                count = 0;
+                count += arr[i] / k;
+                result = k;
+
             }
 
 
+            if (count < lstep) {
 
+                System.out.println(temp);
+
+                break lp1;
+            }
+            count = 0;
         }
-
-
 
 
     }
