@@ -1,5 +1,6 @@
 package solved_class2;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class b1676 {
@@ -9,12 +10,18 @@ public class b1676 {
 
         int n = sc.nextInt();
 
-        int sum = 1;
+        BigInteger bigInteger = BigInteger.valueOf(1);
+
+
         for (int i = 1; i <= n; i++) {
-            sum = sum * i;
+
+            BigInteger temp=BigInteger.valueOf(i);
+
+            bigInteger=bigInteger.multiply(temp);
         }
 
-        String str = String.valueOf(sum);
+        String str = String.valueOf(bigInteger);
+
         int count = 0;
         for (int i = str.length() - 1; i > 0; i--) {
 
