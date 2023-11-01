@@ -26,6 +26,8 @@ public class b1920 {
 
         boolean count = true;
 
+        //기존 정렬 복잡도 높기 떄문에 다른정렬 방법 찾아서 수정해야함
+
         for (int i = 0; i < step; i++) {
             for (int k = 0; k < lstep; k++) {
                 if(first[k]==last[i]){
